@@ -25,13 +25,15 @@ arrayVar[2] = 'j';
 arrayVar.push('r');
 
 console.log(arrayVar);
-
+/*aqui borramos a traves de dos parametros, el primero hace referencia
+el punto de la array donde vamos a borrar o modificar, el segundo hace
+referencia a cuantos valores vamos a borrar */
 arrayVar.splice(1, 1);
 
 console.log(arrayVar);
 
 var objectVar = { name:"Luis", surname:"Valls", gender:'Male' }
-
+//como acceder al atributo de un objeto
 objectVar['name'];
 objectVar['gender'];
 
