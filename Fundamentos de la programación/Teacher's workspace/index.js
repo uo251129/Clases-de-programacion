@@ -40,3 +40,41 @@ objectVar['gender'];
 objectVar['name'] = 'Nitil';
 objectVar['BestFriend'] = 'Óderis'
 
+////// RECORDATORIO DÍA 2
+
+
+// Boolean
+var loQueQuieras = true;
+
+// Strings
+var eligeTuElNombre = "This is a string"
+
+// Numbers
+var numeritos = 9;
+
+// Array
+var listaDeLaCompra = ["Pan", "Maiz", "Coca-Cola", "Chorizo"];
+console.log(listaDeLaCompra[2]);
+
+listaDeLaCompra[0] = "Vino";
+console.log(listaDeLaCompra);
+
+listaDeLaCompra.push("Papel higiénico");
+console.log(listaDeLaCompra)
+
+listaDeLaCompra.splice(3, 1);
+console.log(listaDeLaCompra)
+
+// Objects
+var plant = {especie: "tulipán", altura: 0.40, riegos: 2, esBonita: true};
+console.log(plant["esBonita"]);
+console.log(plant["especie"]);
+
+plant["riegos"] = 3;
+console.log(plant);
+
+plant["color"] = "verde";
+console.log(plant);
+
+delete plant['altura'];
+console.log(plant);
