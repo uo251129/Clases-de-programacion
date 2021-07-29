@@ -75,6 +75,6 @@ if (tos && !bronquitis) {
 if (covid19) {
     alert("WARNING YOU HAVE COVID-19!!!")
 } else {
-    alert("Go get vaccined!")
+    alert("Go get vaccinated!")
 }
 

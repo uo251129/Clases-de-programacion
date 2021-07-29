@@ -81,3 +81,33 @@ if (expressionA){
 }
 
 console.log(number);
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
+
+var primerosPlatos = ['Huevos rotos', 'Arroz meloso', 'Croquetas', 'Melón con jamón'];
+var segundosPlatos = ['Paella', 'Entrecot', 'Atún encebollado', 'Hamburguesa'];
+var postres = ['Cheesecake', 'Gofres', 'Brownie', 'Helado'];
+
+var eleccionDelCliente = [getRandomInt(0, primerosPlatos.length), 
+                            getRandomInt(0, segundosPlatos.length), 
+                            getRandomInt(0, postres.length)];
+
+var primerPlatoCliente = primerosPlatos[eleccionDelCliente[0]]
+var segundoPlatoCliente = segundosPlatos[eleccionDelCliente[1]]
+var postreCliente = postres[eleccionDelCliente[2]]
+
+console.log("El cliente ha pedido " + primerPlatoCliente + ", " + segundoPlatoCliente + " y " + postreCliente);
+console.log("Bon appetit!");
+
+//El cliente ha pedido entrecot o hamburguesa
+//El cliente ha pedido entrecot o el cliente ha pedido hamburguesa
+if (segundoPlatoCliente == "Entrecot" || segundoPlatoCliente == "Hamburguesa"){
+    console.log("¿Quieres acompañar su " + segundoPlatoCliente + " con patatas o ensalada?");
+} else {
+    console.log("¿Quiere acompañar su plato con un poco de pan?");
+}
