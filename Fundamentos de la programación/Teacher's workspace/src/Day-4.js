@@ -5,12 +5,11 @@ function getRandomInt(min, max) {
 }
 
 
-var experimentCount = 0;
+
 
 var simulationResults = [];
 
-
-while(experimentCount < 1000){
+for (let experimentCount = 0; experimentCount < 1000; experimentCount++){
 
     var count = 0;
     condition = true;
@@ -28,8 +27,21 @@ while(experimentCount < 1000){
 
     simulationResults.push(singleSimulationResults);
 
-    experimentCount++;
 } 
+
+console.log(simulationResults);
+
+var totalSum = 0;
+
+for (let simulation of simulationResults){
+    totalSum += simulation.length;
+}
+
+var meanLength = totalSum / simulationResults.length
+
+console.log("The mean is: " + meanLength);
+
+
 
 // EXAMPLE OF EQUIVALENT FOR LOOP AND WHILE LOOP
 

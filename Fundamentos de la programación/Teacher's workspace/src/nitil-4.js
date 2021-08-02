@@ -1,19 +1,15 @@
 //Creamos 3 bucles FOR que sean equivalentes a los bucles WHILE de nitil3.js
 
-
-
-for (var number = 1; number <= 100;   number ++){
-   
-  console.log(number);
+for (let number = 1; number <= 100; number ++){
+    console.log(number + " elefante se balanceaba sobre la tela de una araña!") 
 };
 
 // Segundo
 
 
+var arrayOfProducts = []; 
 
-
-for (productos = 1; productos <= 1000, productos = 2 * productos;){    
-    var arrayOfProducts = [];
+for (let productos = 1; productos <= 1000; productos = 2 * productos){   
     arrayOfProducts.push(productos);
 }
 
@@ -22,31 +18,11 @@ console.log(arrayOfProducts);
 //tercero
 var arrayOfNumeritos = [];
 
-while (productosADividir = 1000; productosADividir >= 1; productosADividir = productosADividir / 2;
-    ){
+for (let productosADividir = 1000; productosADividir >= 1; productosADividir = productosADividir / 2){
     arrayOfNumeritos.push(productosADividir);
-    
 }
 
 console.log(arrayOfNumeritos)
-
-
-//Hacer la traza del bucle FOR de este ejercicio:
-
-while (productos <= 1000){    
-    arrayOfProducts.push(productos);
-    productos = 2 * productos;
-    
-}
-console.log(arrayOfProducts);
-
-//La traza sería la siguiente:
-
-/* let productos = 0;
-    productos < arrayOfProducts = false;
-
-*/
-
 
 
 //OPCIONAL hacer el bucle FOR equivalente al bucle WHILE anidado.
@@ -58,12 +34,11 @@ function getRandomInt(min, max) {
 }
 
 
-var experimentCount = 0;
 
 var simulationResults = [];
 
 
-while(experimentCount < 1000){
+for(let experimentCount = 0; experimentCount < 1000; experimentCount++){
 
     var count = 0;
     condition = true;
@@ -80,9 +55,9 @@ while(experimentCount < 1000){
     }
 
     simulationResults.push(singleSimulationResults);
-
-    experimentCount++;
 } 
+
+console.log(simulationResults);
 
 
 //Subir con el nombre de Weekend Homework!
