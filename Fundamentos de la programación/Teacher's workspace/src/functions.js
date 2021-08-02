@@ -21,6 +21,8 @@ var lastFruit = lastElementOfArray(fruit)
 console.log(lastFruit);
 
 
+
+
 var clothesArray = []
 
 function addClothes(clothes){
