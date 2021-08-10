@@ -82,11 +82,7 @@ if (expressionA){
 
 console.log(number);
 
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min)) + min;
-}
+
 
 
 var primerosPlatos = ['Huevos rotos', 'Arroz meloso', 'Croquetas', 'Melón con jamón'];
