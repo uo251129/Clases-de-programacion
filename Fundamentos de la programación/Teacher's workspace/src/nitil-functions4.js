@@ -26,3 +26,31 @@ console.log(result3);
 
 
 
+
+function maxMin (array){
+   var maximum = array[0];                    
+   var minimum = array[0];
+    for(let number of array){
+        if (number > maximum){
+            maximum = number;  
+        
+        }
+        if  (number < minimum) {
+            minimum = number;
+        }
+    } 
+    
+    arrayOfMaxMin = [minimum ,maximum];
+    return arrayOfMaxMin;
+}
+
+example1 = [-10, 19, 3, -9, -15, -5, -16, 15, 18, 2]
+example2 = [-2, 7, -3, 2, 18, -11, 4, -14, 5, -13]
+example3 =  [-4, -17, 5, -7, 20, 8, 15, 1, 17, 13]
+
+var test1 = maxMin(example1)
+var test2 = maxMin(example2)
+var test3 = maxMin(example3)
+console.log(test1)
+console.log(test2)
+console.log(test3)
