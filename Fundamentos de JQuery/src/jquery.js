@@ -35,7 +35,11 @@ function countdown(){
    if (countdownInterval){
     clearInterval(countdownInterval);
    }
-    countdownInterval = setInterval(decreaseCount, 1000);
+
+   var intervalSpeed = $("#timeSpeed").val();
+   intervalSpeed = parseInt(intervalSpeed);
+
+   countdownInterval = setInterval(decreaseCount, intervalSpeed);
 }
 
 function addFive(){
@@ -75,18 +79,10 @@ function countUp(){
     if (countsUp){
         $("#counter").html(counter);
         clearInterval(countsUp);
-            
     } 
-    countsUp = setInterval(increaseCount, 1000)          
+
+    var intervalSpeed = $("#timeSpeed").val();
+    intervalSpeed = parseInt(intervalSpeed);
+
+    countsUp = setInterval(increaseCount, intervalSpeed)          
 }
-
-
-
-
-//Cuando la cuenta atras llegue a cero habra un alert que ponga boom.
-
-//Añade un boton que sume 5min a la cuenta atras.
-
-//Boton que reste tiempo al lado de custom time.
-
-//Crear un stop en el numero de imput donde la cuenta se detendra.
