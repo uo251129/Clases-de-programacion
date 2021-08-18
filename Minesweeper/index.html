@@ -27,11 +27,24 @@
                     <img id="cat-newspaper" src="resources/cat-newspaper.jpg">
                     <p>¡Programa bien!</p>
                 </div>
-
+            
             </div>
             
-            <button class="btn btn-primary" onclick="redirectTo('src/minesweeper.html')">Let's sweep some mines!</button>
+
+            
         </main>
+        <footer>
+            <div id="footer-message">
+        <p>Let's sweep some mines!</p>
+            </div>
         
+            <div id="footer-buttons">
+            <button class="btn btn-success" onclick="redirectTo('src/minesweeper.html?xSize=9&ySize=9&mines=10')">Rookie</button>
+            <button class="btn btn-primary" onclick="redirectTo('src/minesweeper.html?xSize=16&ySize=16&mines=40')">Intermediate</button>
+            <button class="btn btn-warning" onclick="redirectTo('src/minesweeper.html?xSize=16&ySize=30&mines=100')">Advanced</button>
+            <button class="btn btn-danger" onclick="redirectTo('src/minesweeper.html?xSize=20&ySize=30&mines=150')">Expert</button>
+            <!-- We may see that using ? parameters we change the variables according to our wish.) -->
+        </div>
+    </footer>
     </body>
 </html>

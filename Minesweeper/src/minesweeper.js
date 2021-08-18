@@ -1,6 +1,23 @@
-var xSize = 8;
-var ySize = 8;
-var numberOfMines = 10;
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    return result;
+}
+
+
+
+console.log(location.search)
+
+var xSize = findGetParameter("xSize");
+var ySize = findGetParameter("ySize");
+var numberOfMines = findGetParameter("mines");
 
 var board = [];
 
@@ -10,6 +27,10 @@ const tileState = {
     'flagged' : 'flagged',
     'undefined' : 'undefined'
 }
+function redirectTo(link){
+    window.location.href = link;
+}
+
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -87,4 +108,5 @@ setMines2();
 
 console.log(board);
 
+// ?parameter1=124&parameter2=254 ejemplo sobre como introducir parametros en una pagina 
 
