@@ -35,7 +35,7 @@
         </main>
         <footer>
             <div id="footer-message">
-        <p>Let's sweep some mines!</p>
+        <p>Let's sweep some mines!   Select your difficulty level!</p>
             </div>
         
             <div id="footer-buttons">
@@ -43,8 +43,18 @@
             <button class="btn btn-primary" onclick="redirectTo('src/minesweeper.html?xSize=16&ySize=16&mines=40')">Intermediate</button>
             <button class="btn btn-warning" onclick="redirectTo('src/minesweeper.html?xSize=16&ySize=30&mines=100')">Advanced</button>
             <button class="btn btn-danger" onclick="redirectTo('src/minesweeper.html?xSize=20&ySize=30&mines=150')">Expert</button>
+            <div id="input1-text"></div>
+            <p>Rows: </p>
+            <input type="text" name ="input1">
+            <p>Columns: </p>
+            <div id="input2-text"></div>
+            <input type="text" name ="input2">
+            <p>Mines:</p>
+            <div id="input3-text"></div>
+            <input type="text" name ="input3">
+            <button class="btn btn-info" onclick="redirectTo('src/minesweeper.html?xSize=20&ySize=30&mines=150')">Custom Game</button>
             <!-- We may see that using ? parameters we change the variables according to our wish.) -->
         </div>
-    </footer>
+    </footer> 
     </body>
 </html>

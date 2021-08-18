@@ -110,3 +110,6 @@ console.log(board);
 
 // ?parameter1=124&parameter2=254 ejemplo sobre como introducir parametros en una pagina 
 
+$('#xSize').val() 
+$('#ySize').val() 
+$('#mines').val() 

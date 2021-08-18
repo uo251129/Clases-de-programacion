@@ -3,40 +3,51 @@
 img {
     height: 50vh;
 }
-
+html {
+background-color: brown;
+}
 header, main {
     text-align: center;
+    background-color: brown;
 }
 
 #main-container{
     display: flex;
     justify-content: center;
+    background-color: brown;
 }
 
 h1 {
     font-family: 'Inconsolata', monospace;
+    background-color: brown;
 }
 
 #main-container p {
     font-family: 'Mulish', sans-serif;
     font-size: 1.3em;
+    background-color: brown;
+}
+
+footer{
+background-color: brown;
+
 }
 
 #footer-message{
 display: flex;
 justify-content: center;
 align-items: center;
-
+color: white;
 
 }
 #footer-buttons{
 display: flex;
 justify-content: center;
 align-items: center;
+color: white
 
 }
 .btn{
 margin-right: 25px;
 
 }
-
