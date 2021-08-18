@@ -3,3 +3,21 @@ header {
     align-items: center;
     justify-content: center;
 }
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.tile{
+    height: 20px;
+    width: 20px;
+    background-color: silver;
+    border: 1px solid darkgray;
+}
+
+.row{
+    display: flex;
+}
