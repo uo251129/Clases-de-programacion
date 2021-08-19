@@ -18,6 +18,10 @@ main {
     border: 1px solid darkgray;
 }
 
+.active{
+    background-color: white;
+}
+
 .row{
     display: flex;
 }
@@ -26,6 +30,6 @@ footer{
 
     display: flex;
     align-items: center;
-   justify-content: center;
-   margin-top: 60px;
+    justify-content: center;
+    margin-top: 60px;
 }
