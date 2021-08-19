@@ -3,51 +3,50 @@
 img {
     height: 50vh;
 }
-html {
-background-color: brown;
-}
+
 header, main {
     text-align: center;
-    background-color: brown;
+}
+
+.center_row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #main-container{
     display: flex;
     justify-content: center;
-    background-color: brown;
 }
 
 h1 {
     font-family: 'Inconsolata', monospace;
-    background-color: brown;
 }
 
 #main-container p {
     font-family: 'Mulish', sans-serif;
     font-size: 1.3em;
-    background-color: brown;
-}
-
-footer{
-background-color: brown;
-
 }
 
 #footer-message{
-display: flex;
-justify-content: center;
-align-items: center;
-color: white;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: Black;
 }
+
 #footer-buttons{
-display: flex;
-justify-content: center;
-align-items: center;
-color: white
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: Black;
+    margin-bottom: 20px;
 }
-.btn{
-margin-right: 25px;
 
+.btn{
+    margin-right: 25px;
+}
+
+label {
+    margin-left: 20px;
 }
