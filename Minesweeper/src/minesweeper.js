@@ -70,7 +70,15 @@ function drawBoard(){
     for (let i = 0; i < xSize; i++){
         boardHTML += "<div class='row'>"
         for (let j = 0; j < ySize; j++){
-            boardHTML += "<div onclick='tileOnClick("+i+", "+j+")'" + "class='tile "+board[i][j].state+"'></div>"
+            boardHTML += "<div onclick='tileOnClick("+i+", "+j+")'" + "class='tile "+board[i][j].state+ " number"+ board[i][j].neighborMines +  "'>"
+            if (board[i][j].state == tileState.active){
+                if (board[i][j].mine == false){
+                    boardHTML += board[i][j].neighborMines;
+                } else {
+                    boardHTML += "<img src='/resources/bomb_icon.png'>"
+                }
+            }
+            boardHTML += "</div>"
         }
         boardHTML += "</div>"
     }
@@ -86,13 +94,12 @@ function tileOnClick(x, y){
             alert("Boom! You dead");
         } else {
             calculateNeighborMines(x, y);
-            console.log(board);
         }
     }
     drawBoard();
 }
 
-function calculateNeighborMines(x, y){
+function calculateNeighborMines_ugly(x, y){
     var minedTiles = []
     if(x != 0 && y != 0){
         if (board[x-1][y-1].mine){
@@ -145,5 +152,19 @@ function calculateNeighborMines(x, y){
 
 }
 
+function calculateNeighborMines(x, y){
 
+    var numberOfMines = 0;
 
+    for (let xmod = -1; xmod <= 1; xmod++){
+        for (let ymod = -1; ymod <= 1; ymod++){
+            if (x + xmod >= 0 && x + xmod < board.length && y + ymod >= 0 && y + ymod < board[0].length){
+                if (board[x + xmod][y + ymod].mine){
+                    numberOfMines++;
+                }
+            }
+        }
+    }
+
+    board[x][y].neighborMines = numberOfMines;
+}

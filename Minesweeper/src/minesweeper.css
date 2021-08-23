@@ -11,11 +11,57 @@ main {
     margin-top: 30px;
 }
 
+.number0{
+    color: white;
+}
+
+.number1{
+    color: blue;
+}
+
+.number2{
+    color: green;
+}
+
+.number3{
+    color: red;
+}
+
+.number4{
+    color: purple;
+}
+
+.number5{
+    color: maroon;
+}
+
+.number6{
+    color: turquoise;
+}
+
+.number7{
+    color: black;
+}
+
+.number8{
+    color: gray;
+}
+
 .tile{
     height: 20px;
     width: 20px;
     background-color: silver;
     border: 1px solid darkgray;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tile img{
+    height: 20px;
+    width: 20px;
 }
 
 .active{
