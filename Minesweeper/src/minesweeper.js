@@ -4,6 +4,8 @@ var numberOfMines = findGetParameter("mines");
 
 var board = [];
 
+var gameBegun = false;
+
 // Example of an enumerator
 const tileState = {
     'inactive' : 'inactive',
@@ -80,6 +82,11 @@ function drawBoard(){
 }
 
 function tileOnClick(x, y){
+    if (gameBegun == false){
+        countUp();
+        gameBegun = true;
+    }
+
     var tile = board[x][y];
     if (tile.state == tileState.inactive || tile.state == tileState.undefined){
         tile.state = tileState.active;
