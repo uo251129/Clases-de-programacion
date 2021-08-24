@@ -56,13 +56,20 @@ function drawBoard(){
     for (let i = 0; i < xSize; i++){
         boardHTML += "<div class='row'>"
         for (let j = 0; j < ySize; j++){
-            boardHTML += "<div onclick='tileOnClick("+i+", "+j+")'" + "class='tile "+board[i][j].state+ " number"+ board[i][j].neighborMines +  "'>"
+            boardHTML += "<div oncontextmenu='tileOnRightClick("+i+", "+j+"); return false;' onclick='tileOnClick("+i+", "+j+")'" + "class='tile "
+            + board[i][j].state+ " number"+ board[i][j].neighborMines +  "'>"
             if (board[i][j].state == tileState.active){
                 if (board[i][j].mine == false){
                     boardHTML += board[i][j].neighborMines;
                 } else {
                     boardHTML += "<img src='/resources/bomb_icon.png'>"
                 }
+            }
+            if (board[i][j].state == tileState.flagged){
+                boardHTML += "<i class='fas fa-flag'></i>"
+            }
+            if (board[i][j].state == tileState.undefined){
+                boardHTML += "?"
             }
             boardHTML += "</div>"
         }
@@ -100,4 +107,15 @@ function calculateNeighborMines(x, y){
     }
 
     board[x][y].neighborMines = numberOfMines;
+}
+
+function tileOnRightClick(x, y){
+    if (board[x][y].state == tileState.inactive){
+        board[x][y].state = tileState.flagged;
+    } else if (board[x][y].state == tileState.flagged){
+        board[x][y].state = tileState.undefined;
+    } else if (board[x][y].state == tileState.undefined){
+        board[x][y].state = tileState.inactive;
+    }
+    drawBoard();
 }
