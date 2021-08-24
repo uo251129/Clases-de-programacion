@@ -107,6 +107,16 @@ function calculateNeighborMines(x, y){
     }
 
     board[x][y].neighborMines = numberOfMines;
+
+    if (numberOfMines == 0){
+        for (let xmod = -1; xmod <= 1; xmod++){
+            for (let ymod = -1; ymod <= 1; ymod++){
+                if (x + xmod >= 0 && x + xmod < board.length && y + ymod >= 0 && y + ymod < board[0].length){
+                    tileOnClick(x + xmod, y + ymod);
+                }
+            }
+        }
+    }
 }
 
 function tileOnRightClick(x, y){
