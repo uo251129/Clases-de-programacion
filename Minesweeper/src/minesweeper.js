@@ -14,7 +14,7 @@ const tileState = {
 
 $(document).ready(function(){
     initializeBoard(); 
-    setMines2();
+    setMines();
     console.log(board);
     drawBoard();
 });
@@ -33,21 +33,7 @@ function initializeBoard(){
     }
 }
 
-//Works, but is inefficient. For large boards with high mine density, it could take a lot of time to finish.
-function setMines1(){
-    for (let i = 0; i < numberOfMines; i++){
-        var randomX = getRandomInt(0, xSize);
-        var randomY = getRandomInt(0, ySize);
-        if (board[randomX][randomY].mine == false){
-            board[randomX][randomY].mine = true;
-        } else {
-            i--;
-        }
-    }
-}
-
-// Most efficient alternative!
-function setMines2(){
+function setMines(){
     unminedTile = [];
 
     for (let i = 0; i < xSize; i++){
@@ -97,59 +83,6 @@ function tileOnClick(x, y){
         }
     }
     drawBoard();
-}
-
-function calculateNeighborMines_ugly(x, y){
-    var minedTiles = []
-    if(x != 0 && y != 0){
-        if (board[x-1][y-1].mine){
-            minedTiles.push({'x':x-1, 'y':y-1});
-        }
-    }
-    if (y != 0){
-        if (board[x][y - 1].mine){
-            minedTiles.push({'x':x, 'y':y-1});
-        }
-    }
-
-    if(x != xSize - 1 && y != 0){
-        if (board[x + 1][y-1].mine){
-            minedTiles.push({'x':x + 1, 'y':y-1});
-        }
-    }
-    
-    if(x != 0){
-        if (board[x - 1][y].mine){
-            minedTiles.push({'x':x-1, 'y':y});
-        }
-    }
-
-    if(x != xSize - 1){
-        if (board[x + 1][y].mine){
-            minedTiles.push({'x':x + 1, 'y':y});
-        }
-    } 
-
-    if(x != 0 && y != ySize - 1){
-        if (board[x - 1][y + 1].mine){
-            minedTiles.push({'x':x - 1, 'y':y + 1});
-        }
-    }
-
-    if(y != ySize - 1){
-        if (board[x][y + 1].mine){
-            minedTiles.push({'x':x, 'y':y + 1});
-        }
-    }
-
-    if(x != xSize - 1 && y != ySize - 1){
-        if (board[x + 1][y + 1].mine){
-            minedTiles.push({'x':x + 1, 'y':y + 1});
-        }
-    }
-
-    board[x][y].neighborMines = minedTiles.length
-
 }
 
 function calculateNeighborMines(x, y){
